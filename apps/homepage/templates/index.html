@@ -1,0 +1,26 @@
+{% extends 'home.html' %}
+
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="panel active" style="background-image: url('{% static 'img/authorBanner.png' %}');">
+            <a href="{% url 'main:author_create' %}">Authors <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+        </div>
+        <div class="panel" style="background-image: url('{% static 'img/bookBanner.jpg' %}');">
+            <a href="{% url 'main:book_create' %}">Books <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+        </div>
+        <div class="panel" style="background-image: url('{% static 'img/publisherBanner.jpg' %}');">
+            <a href="{% url 'main:publisher_create' %}">Publishers <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+        </div>
+        <div class="panel" style="background-image: url('{% static 'img/aboutBanner.jpg' %}');">
+            <a href="#">About <i class="fa fa-question-circle" aria-hidden="true"></i></a>
+        </div>
+    </div>
+
+    <script src="{% static 'js/index.js' %}"></script>
+{% endblock %}

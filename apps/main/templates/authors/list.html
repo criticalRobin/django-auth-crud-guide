@@ -1,0 +1,25 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block content %}
+{% for author in object_list %}
+<div class="container text-center mt-4 mb-3">
+    <div class="mx-auto">
+        <div class="row mx-auto" >
+            <div class="col-5 py-3 border bg-light mx-auto">
+                {% comment %}CARD{% endcomment %}
+                <div class="card mx-auto" style="width: 18rem;">
+                    <img src="{% static 'img/author2.jpg' %}" class="img-fluid" style="height: 200px;" alt="Author" />
+                    <div class="card-body">
+                        <h5 class="card-title">{{ author }}</h5>
+                        <p class="card-text">Escritor de nacionalidad {{ author.nationality }} actualmente tiene {{ author.age }} años</p>
+                        <a href="{% url 'main:author_update' author.id %}" class="btn btn-warning w-100 mb-1">Edit</a>
+                        <a href="{% url 'main:author_delete' author.id %}" class="btn btn-danger w-100">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+  
+{% endblock %}

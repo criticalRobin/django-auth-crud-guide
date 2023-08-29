@@ -1,0 +1,25 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block content %}
+<div class="container text-center mt-4 mb-3">
+    <div class="mx-auto">
+        <div class="row mx-auto" >
+            <div class="col-5 py-3 border bg-light mx-auto">
+                {% comment %}CARD{% endcomment %}
+                <div class="card mx-auto" style="width: 18rem;">
+                    <img src="{% static 'img/author2.jpg' %}" class="img-fluid" style="height: 200px;" alt="Author" />
+                    <div class="card-body">
+                        <h5 class="card-title">{{ author }}</h5>
+                        <p class="card-text">Estás seguro de eliminar al autor?</p>
+                        <form method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger w-100">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

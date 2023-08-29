@@ -1,0 +1,15 @@
+nav a{
+    margin-top: 5px;
+    border-radius: 10px;
+    margin: 5px;
+    border: 1px solid black;
+    font-size: 18px;
+    color: black;
+}
+
+nav a:hover{
+    border: 2px solid black;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}

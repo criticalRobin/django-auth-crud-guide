@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/styles-login.css' %}">
+  </head>
+  <body>
+    <div class="container">
+      <form method="post">
+        {% csrf_token %}
+        <div class="form-c">
+          {{ form.as_p }}
+          <button type="submit" class="btn">SignUp</button>
+        </div>
+      </form>
+    </div>
+    <script>
+      const labels = document.querySelectorAll(".form-c label");
+      labels.forEach(label=>{
+        label.innerHTML = "";
+      });
+    </script>
+  </body>
+</html>

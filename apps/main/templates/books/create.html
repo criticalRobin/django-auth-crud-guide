@@ -1,0 +1,27 @@
+{% extends 'home.html' %}
+
+{% block content %}
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form method="post" class="card p-4" id="formulary">
+          {% csrf_token %}
+          <div class="card-body">
+            <h2 class="card-title">Añadir Libro</h2>
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success mt-3">Save</button>
+            <button type="button" class="btn btn-danger mt-3" id="red">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script>
+    const redBtn = document.getElementById('red')
+    const formulary = document.getElementById('formulary')
+    
+    redBtn.addEventListener('click', () => {
+      formulary.querySelectorAll('input:not([name="csrfmiddlewaretoken"])', 'select', 'textarea').forEach((element) => (element.value = ''))
+    })
+  </script>
+{% endblock %}
