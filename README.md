@@ -8,4 +8,4 @@ If you dont want to create a user use this credentials to login:
 
 user: guest
 
-password: guest1234
+password: demo1234
